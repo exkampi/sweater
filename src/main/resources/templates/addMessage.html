@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Добавить новое сообщение</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+    <form method="post" action="save">
+        <input type="text" name="text" placeholder="Введите сообщение"/>
+        <input type="text" name="tag" placeholder="Тэг"/>
+        <button type="submit">Добавить</button>
+    </form>
+
+    <p>Список сообщений:</p>
+    <div th:each="message : ${messages}">
+        <b th:text="${message.id}"></b>
+        <span th:text="${message.tag}"></span>
+        <i th:text="${message.text}"></i>
+    </div>
+</body>
+</html>
