@@ -5,9 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<h1>Добро пожаловать на главную страницу</h1>
 
-<form method="post" action="filter">
+<h1 th:inline="text">Добро пожаловать на главную страницу
+    <span th:if="${#httpServletRequest.remoteUser}">, [[${#httpServletRequest.remoteUser}]]</span>
+    !
+</h1>
+
+<form th:action="@{/filter}" method="post">
     <input type="text" name="tag" placeholder="Введите тэг">
     <button type="submit">Найти</button>
 </form>
@@ -19,8 +23,11 @@
     <i th:text="${message.text}"></i>
 </div>
 
-<p>Позвольте поздороваться с вами <a href="/greeting">тут</a></p>
-<p>Добавить сообщение <a href="/addMessage">тут</a></p>
+<p><a href="/greeting">Позвольте поздороваться с вами</a></p>
+<p><a href="/addMessage">Добавить сообщение</a></p>
 
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Выйти"/>
+</form>
 </body>
 </html>

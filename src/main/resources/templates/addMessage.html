@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html">
 </head>
 <body>
-    <form method="post" action="save">
+    <form th:action="@{/save}" method="post">
         <input type="text" name="text" placeholder="Введите сообщение"/>
         <input type="text" name="tag" placeholder="Тэг"/>
         <button type="submit">Добавить</button>

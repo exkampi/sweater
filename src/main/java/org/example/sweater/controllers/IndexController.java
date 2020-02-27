@@ -1,6 +1,6 @@
 package org.example.sweater.controllers;
 
-import org.example.sweater.entities.Message;
+import org.example.sweater.domain.Message;
 import org.example.sweater.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +24,7 @@ public class IndexController {
         return "index";
     }
 
-    @PostMapping("filter")
+    @PostMapping("/filter")
     public String filter(@RequestParam String tag, Model model) {
         if (tag == null || tag.isEmpty()) {
             index(model);
