@@ -1,6 +1,6 @@
 package org.example.sweater.repos;
 
-import org.example.sweater.domain.User;
+import org.example.sweater.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

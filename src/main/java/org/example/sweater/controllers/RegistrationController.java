@@ -1,7 +1,7 @@
 package org.example.sweater.controllers;
 
-import org.example.sweater.domain.Role;
-import org.example.sweater.domain.User;
+import org.example.sweater.entities.Role;
+import org.example.sweater.entities.User;
 import org.example.sweater.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
