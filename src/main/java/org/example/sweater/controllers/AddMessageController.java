@@ -22,7 +22,7 @@ public class AddMessageController {
         return "addMessage";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/addMessage")
     public String addMessage(
             @AuthenticationPrincipal User user,
             @RequestParam String text,
