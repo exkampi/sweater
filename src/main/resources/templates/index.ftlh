@@ -23,6 +23,7 @@
 
     <p><a href="/greeting">Позвольте поздороваться с вами</a></p>
     <p><a href="/addMessage">Добавить сообщение</a></p>
+    <p><a href="/user">Список пользователей</a></p>
     <@a.logout/>
 
 </@c.page>
