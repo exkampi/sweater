@@ -11,6 +11,7 @@ public class Message {
 
     private String text;
     private String tag;
+    private String filename;
 
     @ManyToOne
     @JoinColumn(name = "usr_id")
@@ -32,6 +33,14 @@ public class Message {
 
     public String getAuthorName() {
         return this.author != null ? author.getUsername() : "<none>";
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public UUID getId() {

@@ -2,12 +2,16 @@
 <#import "parts/auth.ftlh" as a>
 
 <@c.page "Регистрация">
-<h1>Страница регистрации</h1>
+    <h1>Страница регистрации</h1>
 
-<p>Форма регистрации:</p>
-<@a.login "/registration" />
+    <#if message??>
+        ${message}
+    </#if>
 
-<br/>
-<a href="/login">Войти</a>
+    <p>Форма регистрации:</p>
+    <@a.login "/registration" />
+
+    <br/>
+    <a href="/login">Войти</a>
 
 </@c.page>

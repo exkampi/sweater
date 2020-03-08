@@ -5,7 +5,7 @@
     <h1>Добро пожаловать на главную страницу!</h1>
 
     <form action="/" method="get">
-        <input type="text" name="filter" placeholder="Введите тэг" value="${filter}" />
+        <input type="text" name="filter" placeholder="Введите тэг" value="${filter!}" />
         <button type="submit">Найти</button>
     </form>
 
@@ -16,6 +16,11 @@
             <b>${message.tag}</b>
             <i>${message.text}</i>
             <strong>${message.authorName}</strong>
+            <div>
+                <#if message.filename??>
+                    <img src="/img/${message.filename}" alt="${message.filename}">
+                </#if>
+            </div>
         </div>
     <#else>
         No messages
