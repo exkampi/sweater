@@ -1,34 +1,15 @@
 <#import "parts/common.ftlh" as c>
-<#import "parts/auth.ftlh" as a>
+<#import "parts/list.ftlh" as list>
 
 <@c.page "Главная страница">
-    <h1>Добро пожаловать на главную страницу!</h1>
-
-    <form action="/" method="get">
-        <input type="text" name="filter" placeholder="Введите тэг" value="${filter!}" />
-        <button type="submit">Найти</button>
-    </form>
-
-    <p>Список сообщений:</p>
-    <#list  messages as message>
-        <div>
-            <span>${message.id}</span>
-            <b>${message.tag}</b>
-            <i>${message.text}</i>
-            <strong>${message.authorName}</strong>
-            <div>
-                <#if message.filename??>
-                    <img src="/img/${message.filename}" alt="${message.filename}">
-                </#if>
-            </div>
+    <div class="form-row row">
+        <div class="form-group col">
+            <form action="/" method="get" class="form-inline">
+                <input type="text" class="form-control col" name="filter" placeholder="Поиск по тэгу" value="${filter!}"/>
+                <button type="submit" class="btn btn-primary ml-2">Найти</button>
+            </form>
         </div>
-    <#else>
-        No messages
-    </#list>
+    </div>
 
-    <p><a href="/greeting">Позвольте поздороваться с вами</a></p>
-    <p><a href="/addMessage">Добавить сообщение</a></p>
-    <p><a href="/user">Список пользователей</a></p>
-    <@a.logout/>
-
+    <@list.message messages/>
 </@c.page>

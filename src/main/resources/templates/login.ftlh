@@ -2,9 +2,7 @@
 <#import "parts/auth.ftlh" as a>
 
 <@c.page "Авторизация">
-    <h1>Залогиньтесь пожалуйста</h1>
-    <@a.login "/login" />
 
-    <br/>
-    <a href="/registration">Регистрация</a>
+    <h3 class="mb-4">Вход</h3>
+    <@a.login "/login" false/>
 </@c.page>
