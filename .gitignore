@@ -3,3 +3,4 @@
 gradle/
 build/
 uploads/
+src/main/resources/application.properties
