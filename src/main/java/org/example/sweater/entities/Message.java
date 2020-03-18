@@ -1,6 +1,9 @@
 package org.example.sweater.entities;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 @Entity
@@ -9,7 +12,11 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    @NotBlank(message = "Пожалуйста, напишите текст сообщения")
+    @Length(max = 4096, message = "Сообщение слишком большое (не более 4kB)")
     private String text;
+    @NotBlank(message = "Пожалуйста, введите тэг")
+    @Length(max = 255, message = "Тэг слишком большой (не более 255B)")
     private String tag;
     private String filename;
 
