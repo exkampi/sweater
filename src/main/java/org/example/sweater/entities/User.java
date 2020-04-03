@@ -21,9 +21,6 @@ public class User implements UserDetails {
     private String username;
     @NotBlank(message = "Введите пароль")
     private String password;
-    @Transient
-    @NotBlank(message = "Пароли не совпадают")
-    private String password2;
     private boolean active;
 
     @Email(message = "Почтовый адрес не корректен")
@@ -119,13 +116,5 @@ public class User implements UserDetails {
 
     public void setActivationCode(String activationCode) {
         this.activationCode = activationCode;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
     }
 }

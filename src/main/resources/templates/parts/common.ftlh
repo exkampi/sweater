@@ -11,6 +11,7 @@
               crossorigin="anonymous">
                 <link rel="stylesheet" href="/static/local.css">
         <title>${title}</title>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
 
